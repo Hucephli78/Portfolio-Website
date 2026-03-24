@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@theme {
+  --font-headline: "Newsreader", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-background: #131313;
+  --color-primary: #b8cdac;
+  --color-secondary: #dac769;
+  --color-surface: #131313;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-bright: #393939;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #c5c7bf;
+  --color-outline-variant: #454841;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-surface-container-high;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
